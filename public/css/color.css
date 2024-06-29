@@ -1,0 +1,46 @@
+:root {
+    --custom-color: #1c2331;
+    --custom-color-darker: #17202b;
+    --custom-color-light: #334150;
+    --custom-color-rgb: 28, 35, 49;
+    --custom-color-light-rgb: 51, 65, 80;
+    --custom-text-color: #ffffff;
+}
+
+.accordion {
+    --bs-accordion-btn-focus-border-color: var(--custom-color-light);
+    --bs-accordion-btn-focus-box-shadow: 0 0 0 0.25rem var(--custom-color-light);
+    --bs-accordion-active-bg: var(--custom-color-light);
+    --bs-accordion-active-color: var(--custom-color-darker);
+}
+
+.btn-primary {
+    --bs-btn-bg: var(--custom-color);
+    --bs-btn-border-color: var(--custom-color);
+    --bs-btn-hover-bg: var(--custom-color-darker);
+    --bs-btn-hover-border-color: var(--custom-color-darker);
+    --bs-btn-active-bg: var(--custom-color-light);
+    --bs-btn-active-border-color: var(--custom-color-light);
+    --bs-btn-disabled-bg: var(--bs-success-rgb);
+    --bs-btn-disabled-border-color: var(--bs-success-rgb);
+}
+
+.bg-primary {
+    --bs-bg-opacity: 1;
+    background-image: linear-gradient(to right top, #1c2331, #1c2331, #1c2331, #1c2331, #1c2331, #1a2534, #182837, #162a39, #0e303e, #033640, #003c41, #00413f) !important;
+}
+
+.form-check-input:checked {
+    background-color: var(--custom-color);
+    border-color: var(--custom-color);
+}
+
+.form-control:focus,
+.form-check-input:focus {
+    border-color: rgba(var(--custom-color-light-rgb), 0.8);
+    box-shadow: 0 0 0 4px rgba(var(--custom-color-light-rgb), 0.6);
+}
+
+footer {
+    color: var(--custom-text-color);
+}

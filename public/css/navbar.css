@@ -1,0 +1,69 @@
+/* Setting for nav-link */
+.navbar-nav .nav-link {
+
+  position: relative; /* Set the position to relative for positioning pseudo-elements */
+}
+
+/* Pseudo-elements for nav-link */
+.navbar-nav .nav-link:before,
+.navbar-nav .nav-link:after {
+  content: ''; /* Set an empty content for pseudo-elements */
+  position: absolute; /* Position the pseudo-elements absolutely */
+  width: 0; /* Start with a width of 0 */
+  height: 2px; /* Set the height of the pseudo-elements to create an underline effect */
+  bottom: -2px; /* Position the pseudo-elements below the text to create the underline */
+  transition: all 0.2s ease; /* Apply a smooth transition on all changes */
+  background-color: white; /* Set the background color of the pseudo-elements to create the underline */
+}
+
+/* Pseudo-element before nav-link text */
+.navbar-nav .nav-link:before {
+  left: 0; /* Position the pseudo-element at the left of the text */
+}
+
+/* Pseudo-element after nav-link text */
+.navbar-nav .nav-link:after {
+  right: 0; /* Position the pseudo-element at the right of the text */
+}
+
+/* Styles for nav-link when hovered or focused */
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link:focus {
+  color: white; /* Change the text color on hover or focus */
+  text-decoration: none; /* Remove the default underline on hover or focus */
+}
+
+/* Styles for pseudo-elements when nav-link is hovered or focused */
+.navbar-nav .nav-link:hover:before,
+.navbar-nav .nav-link:focus:before,
+.navbar-nav .nav-link:hover:after,
+.navbar-nav .nav-link:focus:after {
+  width: 100%; /* Increase the width of the pseudo-elements to create an underline on hover or focus */
+}
+
+/* Styles for active nav-link */
+.navbar-nav .nav-link.active,
+.navbar-nav .nav-link.active:hover,
+.navbar-nav .nav-link.active:focus {
+  color: white; /* Change the text color for active nav-links */
+  text-decoration: none; /* Remove the default underline for active nav-links */
+}
+
+/* Styles for pseudo-elements when nav-link is active */
+.navbar-nav .nav-link.active:before,
+.navbar-nav .nav-link.active:after {
+  width: 100%; /* Set the width of the pseudo-elements to create an underline for active nav-links */
+}
+
+/* Styles for navbar toggler when focused or hovered */
+.navbar-toggler:not(.collapsed):focus,
+.navbar-toggler:not(.collapsed):hover {
+  outline: none; /* Remove the outline on focus or hover */
+  border: black 3px solid; /* Add a border around the navbar toggler on focus or hover (replace with your desired color) */
+}
+
+/* Styles for the element with the ID 'current' */
+.current {
+  color: white; /* Set the text color for the 'current' element */
+  border-bottom: 2px groove white; /* Add a 2px solid underline to the 'current' element */
+}

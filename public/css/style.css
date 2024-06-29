@@ -1,0 +1,402 @@
+@font-face {
+    font-family: montserrat;
+    src: url(../fonts/Montserrat-Regular.ttf); /* URL to the Montserrat font file */
+}
+
+/* Font 'Flix' for bold text */
+@font-face {
+    font-family: flix;
+    src: url(../fonts/Flix-Normal.ttf); /* URL to the Flix font file */
+    font-weight: bold;; /* Specify the font weight as bold */
+}
+
+.card {
+    border: 1px solid rgb(1,50,32); /* Set a thick black border */
+    border-radius: 10px;
+    box-shadow: none; /* Remove any box shadow initially */
+    z-index: 1; /* Set the z-index to 1 */
+    background-color: rgba(255, 255, 255, 0.7); 
+}
+.card:hover {
+    box-shadow: 0px 0px 10px 3px rgb(1,50,32); 
+}
+body {
+    font-family: 'montserrat';
+    background-color: #c2beb9;  
+    color: black;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+html::-webkit-scrollbar {
+    display: none; /* Remove the scrollbar for WebKit browsers (Chrome, Safari, etc.) */
+}
+
+html {
+    scrollbar-width: none; /* Remove the scrollbar for Firefox */
+    -ms-overflow-style: none; /* Remove the scrollbar for Internet Explorer/Edge */
+}
+
+
+span {
+    font-weight: bold;
+    font-size: medium;
+}
+main {
+    min-height: calc(100vh - 56px - 56px);
+}
+
+.page-title {
+    color: #333; /* Text color */
+    font-size: 2.25em; /* Adjust the font size as needed */
+    margin-bottom: 20px; /* Space below the heading */
+    text-align: center; /* Center the text */
+    text-transform: uppercase; /* Convert text to uppercase */
+     /* Make the text bold */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Add a subtle text shadow */
+  }
+  
+  /* Add additional styles if needed */
+  
+  
+.content {
+    flex: 1;
+}
+  
+.footer {
+    background-color: #1c2331;
+    color: white;
+    text-align: center;
+    font-family: cursive;
+    font-size: large;
+    letter-spacing: 3px;
+    padding: 10px; /* Add padding for better appearance */
+}
+
+.footer a {
+    text-decoration: none;
+    color: red;
+}
+  
+
+.card-title {
+    
+    font-family: 'flix';
+    color: #6F00FF; 
+    letter-spacing: 0.1rem; /* Adjusted letter spacing with em units */
+    font-size: 1.5rem; /* Adjusted font size with em units */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    white-space: nowrap;
+    border-width: 0;
+  }
+
+.popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fefefe;
+    border: 1px solid #ccc;
+    padding: 20px;
+    text-align: center;
+    z-index: 1;
+}
+
+.popup .popuptext {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.popup .button-container {
+    display: flex;
+    gap: 10px; /* Adjust the gap between buttons as needed */
+    margin-top: 10px;
+}
+
+.popup button{
+    padding: 8px 16px;
+    cursor: pointer;
+}
+
+.form-container {
+    background-color: #126180; /* Blue background color */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Box shadow for a subtle depth effect */
+    color: #fff; /* Text color for better visibility on the blue background */
+    border-radius: 10px; /* Rounded corners for a softer look */
+    padding: 20px; /* Padding for inner content spacing */
+}
+
+.form-container input {
+    background-color: #d4d4d4;
+}
+/* Style the submit button */
+.btn-primary {
+    background-color: #2f465e; /* Darker blue for the button */
+    border-color: #2f465e; /* Border color to match the background */
+}
+
+.btn-primary:hover {
+    background-color: #1a252f; /* Darker blue on hover */
+    border-color: #1a252f;
+}
+
+#sortDropdownContainer {
+    position: fixed;
+    top: 10%;
+    right: 10px;
+    background-color: #fff; /* Background color for the container */
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 9999;
+}
+
+#sortDropdown {
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid #ccc; /* Border color for the dropdown */
+    border-radius: 4px;
+    outline: none;
+    cursor: pointer;
+}
+
+#sortDropdown:hover {
+    border-color: #555; /* Border color on hover */
+}
+
+.holder {
+    max-width: 255px;
+    display: flex;
+    padding: 10px 10px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: -8px -8px 15px rgba(255, 255, 255, 0.7),
+                10px 10px 10px rgba(0, 0, 0, 0.3),
+                inset -8px -8px 15px rgba(255, 255, 255, 0.7),
+                inset  10px 10px 10px rgba(0, 0, 0, 0.3);
+    align-items: center;
+}
+
+.label {
+    width: 150px;
+}
+
+.label i {
+    margin-right: 5px;
+}
+
+.toggle {
+    height: 40px;
+}
+
+.toggle input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+    z-index: -2;
+}
+
+.toggle input[type="checkbox"] + label {
+    position: relative;
+    display: inline-block;
+    width: 100px;
+    height: 40px;
+    border-radius: 20px;
+    margin: 9;
+    cursor: pointer;
+    box-shadow: inset -8px -8px 15px rgba(255, 255, 255, 0.6),
+                inset 10px 10px 10px rgba(0, 0, 0, 0.25);
+}
+
+.toggle input[type="checkbox"] + label::before {
+    position: absolute;
+    content: "OFF";
+    font-size: 13px;
+    text-align: center;
+    line-height: 25px;
+    top: 8px;
+    left: 8px;
+    width: 45px;
+    height: 25px;
+    border-radius: 20px;
+    background-color: #d1dad3;
+    box-shadow: -3px -3px 5px rgba(255, 255, 255, 0.5),
+                 3px  3px 5px rgba(0, 0, 0, 0.25);
+    transition: ease-in-out;
+}
+.toggle input[type="checkbox"]:checked + label::before {
+    left: 50%;
+    content: "ON";
+    color: #fff;
+    background-color: #10cc4f;
+    box-shadow: -3px -3px 5px rgba(255, 255, 255, 0.5), 3px 3px 5px #00b33c;
+}
+
+.form-input-group {
+    font-size: 1.25rem;
+    position: relative;
+    --primary: #6F00FF;
+}
+
+.form-input {
+    all: unset;
+    background-color: transparent;
+    color: black; /* Adjust text color for better visibility */
+    padding: 1rem;
+    border: 1px solid black;
+    border-radius: 10px;
+    transition: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+    width: 100%;
+    box-sizing: border-box; /* Include padding and border in width */
+}
+.form-input-label {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    color: black; /* Adjust label text color for better visibility */
+    pointer-events: none;
+    transition: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.form-input:focus {
+    border: 1px solid var(--primary);
+}
+.form-input:-webkit-autofill ~ .form-input-label,
+.form-input:focus ~ .form-input-label,
+.form-input:valid ~ .form-input-label, 
+.form-input:focus-within ~ .form-input-label{
+    transform: translateY(-140%) scale(0.7);
+    color: var(--primary);
+}
+
+.sell-button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px; /* Adjust the margin as needed */
+}
+
+#sell-button {
+    border-radius: 8px; /* Adjust the border-radius as needed */
+    /* Add any additional styles for the button here */
+}
+
+#radio-container {
+    display: flex;
+    gap: 10px; /* Adjust the gap as per your preference */
+    color: black;
+    font-size: 1.5rem;
+    padding-bottom: 3%;
+}
+
+#radio-container label {
+    display: flex;
+    cursor: pointer;
+    font-weight: 500;
+    margin-right: 10px; /* Adjust the margin as per your preference */
+}
+
+#radio-container input {
+    display: none;
+}
+
+#radio-container input:checked + span {
+    background-color: #d6d6e5;
+}
+
+#radio-container span {
+    display: flex;
+    align-items: center;
+    padding: 0.3em 0.7em 0.3em 0.3em;
+    border-radius: 99em;
+    transition: 0.25s ease;
+    margin-left: 0.5em;
+}
+
+#radio-container span:before {
+    content: "";
+    width: 2em;
+    height: 2em;
+    background-color: #fff;
+    flex-shrink: 0;
+    display: flex;
+    border-radius: 50%;
+    margin-right: 0.3em;
+    box-shadow: inset 0 0 0 0.1em #00005c;
+    transition: 0.25s ease;
+}
+
+#radio-container input:checked + span:before {
+    box-shadow: inset 0 0 0 0.4em #00005c;
+}
+
+#radio-container span:hover {
+    background-color: #d6d6e5;
+}
+
+.card {
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+
+/* Optional: Add animation for a more dynamic effect */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.card {
+    animation: fadeInUp 0.5s ease-in-out;
+}
+
+#updatePasswordForm {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    width: 50%;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    z-index: 1000;
+}
+
+.post-container {
+    width: 95%;
+    height: 80vh;
+    overflow-y: scroll; /* Change 'scroll' to 'hidden' */
+    background-color: white; /* Set your desired background color */
+    border: 1px solid black;
+    border-radius: 20px;
+    background-image: linear-gradient(to right top, #367588, #598d9d, #7ba6b2, #9cbfc8, #bdd9df, #cbe4e8, #daeff1, #e9fafb, #e8f9f8, #e7f7f6, #e7f6f3, #e6f4f1);
+}
+
+.post-container::-webkit-scrollbar {
+    display: none; /* Remove the scrollbar for WebKit browsers (Chrome, Safari, etc.) */
+}
+
+.post-container {
+    scrollbar-width: none; /* Remove the scrollbar for Firefox */
+    -ms-overflow-style: none; /* Remove the scrollbar for Internet Explorer/Edge */
+}

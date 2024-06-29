@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Update Task</title>
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">   
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+      crossorigin="anonymous"
+    />
+    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/color.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/navbar.css">
+    <style>
+      body {
+          background-image: url('images/yuriy-kovalev-nN1HSDtKdlw-unsplash.jpg');
+          background-repeat: no-repeat;
+          background-attachment: fixed; 
+          background-size: cover;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <i class="fas fa-home"></i>
+          <span class="sr-only">Home</span>
+        </a>        
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <!-- me-auto: margin-right: auto -->
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link current" href="index.html">Tasks</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="character.html">Character</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="arsenalAndLibrary.html">Arsenal & Library</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" id="equipmentAndSkillButton" href="equipmentAndSkill.html">Equipment & Skills</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="quests.html">Quests</a>
+              </li>
+            </ul>
+        </div>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <!-- ms-auto: margin-left: auto -->
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="/newsfeed.html">Newsfeed</a>
+            </li>
+            <li class="nav-item">
+              <a id="tradeButton" href="/trades.html" class="nav-link">Trade</a>
+            </li>
+            <li class="nav-item">
+              <a id="profileButton" href="/profile.html" class="nav-link">Profile</a>
+            </li>
+            <li class="nav-item">
+              <a id="logoutButton" href="#" class="nav-link">Logout</a>
+            </li>
+            <li class="nav-item">
+              <a id="loginButton" href="/login.html" class="nav-link">Login</a>
+            </li>
+            <li>
+              <div class="btn-nav">
+                <a id="registerButton" class="btn text-bg-light btn-small navbar-btn" href="/register.html"
+                  >Register!</a
+                >
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>     
+    <main class="py-4">
+        <div class="container">
+          <div class="row justify-content-center mt-5">
+            <div class="col-md-6 px-5">
+              <h3 class="mb-4 text-center page-title" id="task-title"></h3>
+              <form id="updateTaskForm">
+                <div class="form-group pb-3">
+                  <label for="title">Title</label>
+                  <input type="text" class="form-control" id="title" placeholder="Enter a short title" required>
+                </div>
+                <div class="form-group pb-3">
+                  <label for="description">Description</label>
+                  <textarea class="form-control" id="description" placeholder="Enter a detailed description" required></textarea>
+                </div>
+                <div class="form-group pb-3">
+                  <label for="points">Points ( 1 to 100 )</label>
+                  <input type="number" class="form-control" id="points" placeholder="Enter an integer value" required>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Make Changes</button>
+              </form>
+              <div id="warningCard" class="card border-danger mt-3 mb-3 d-none">
+                <div class="card-body text-danger">
+                  <p id="warningText" class="card-text"></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+      
+
+      <footer class="text-center mt-5 footer">
+        <p class="footer-text">
+          Made by Ye Yint Aung [DIT / 1B / 11] All rights reserved. &copy; 2024, January.
+        </p>
+      </footer>
+    <script src="https://kit.fontawesome.com/f01649545e.js" crossorigin="anonymous"></script>
+    <script
+    src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+    crossorigin="anonymous"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"
+      integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS"
+      crossorigin="anonymous"
+    ></script>
+    <script src="js/queryCmds.js" type="text/javascript"></script>
+    <script src="js/getCurrentURL.js" type="text/javascript"></script>
+    <script src="js/userNavbarToggle.js" type="text/javascript"></script>
+    <script src="js/detectToken.js" type="text/javascript"></script>
+    <script src="js/updateTask.js" type="text/javascript"></script>
+    <script src="js/inactiveReload.js" type="text/javascript"></script>
+  </body>
+</html>
